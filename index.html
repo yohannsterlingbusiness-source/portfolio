@@ -34,15 +34,22 @@
       </div>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/yohann-sterling/" target="_blank">LinkedIn ↗</a>
-        <a href="/cdn-cgi/l/email-protection#245d4b4c454a4a57504156484d4a430a4651574d4a415757644349454d480a474b49">Email ↗</a>
+        <a href="#" id="emailHome">Email ↗</a>
       </div>
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script src="particles.js"></script>
+  <script src="particles.js"></script>
   <script>
     gsap.from("#intro", { opacity: 0, y: 60, duration: 1.2, ease: "power3.out" });
     gsap.from(".cta-btn", { opacity: 0, y: 30, stagger: 0.2, duration: 0.9, delay: 0.6, ease: "power2.out" });
+
+    document.getElementById('emailHome').addEventListener('click', function(e) {
+      e.preventDefault();
+      var u = 'yohannsterling.business';
+      var d = 'gmail.com';
+      window.location.href = 'mailto:' + u + '@' + d;
+    });
   </script>
 </body>
 </html>

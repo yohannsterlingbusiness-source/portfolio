@@ -101,13 +101,12 @@
       <p>Disponible pour une alternance Data Analyst.</p>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/yohann-sterling/" target="_blank" class="contact-btn">LinkedIn</a>
-        <a href="mailto:yohannsterling.business@gmail.com" class="contact-btn">Email</a>
+        <a href="#" class="contact-btn" id="emailBtn">Email</a>
       </div>
     </section>
   </main>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>
-    // Chart
+  <script>
     const ctx = document.getElementById("skillsChart").getContext("2d");
     new Chart(ctx, {
       type: "bar",
@@ -131,7 +130,6 @@
       }
     });
 
-    // Reveal on scroll
     const reveals = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add("visible"); } });
@@ -139,6 +137,13 @@
     reveals.forEach(r => observer.observe(r));
 
     gsap.from(".hero-section", { opacity: 0, y: 40, duration: 1, ease: "power3.out" });
+
+    document.getElementById('emailBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      var u = 'yohannsterling.business';
+      var d = 'gmail.com';
+      window.location.href = 'mailto:' + u + '@' + d;
+    });
   </script>
 </body>
 </html>
